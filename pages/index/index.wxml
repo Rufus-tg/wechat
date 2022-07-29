@@ -1,6 +1,22 @@
 <!--index.wxml-->
 <view class="container">
-  <text style="height: 1000px;" lass="userinfo-nickname">hellow world</text>
+<!-- 当属性wx.if为true时内容在页面上显示否则从页面上移除 -->
+<view wx:if="{{showname}}" bindtap="clicktap">{{name}}</view>
+<!-- 这里写表达属性要加上{{}},且在里面可以写任意表达式包括运算符号 -->
+<checkbox checked="{{true}}">选择框</checkbox>
+ <!-- hidden属性与wx.if在展示时的判断完全相反， -->
+<!-- hidden为false时内容在页面上显示否则从页面上隐藏而不是移除 -->
+<view hidden="{{!showhidden}}" bindlongtap="clicklongtap">{{name2}}</view>
+<!-- 循环输出生成数组列表，默认值名称item和index，可设置wx:for-item属性和wx:for-index修改名称 -->
+<!-- wx:key中能写数组中的属性值但是不能接受相同值的属性 -->
+<view wx:for="{{arr}}" wx:key="*this">{{item.name+"-"}}{{index+1}}</view>
+<!-- include查询繁琐但可以直接调用用逻辑层中data数据，template简化路径但是需要用import先导入路径，调用逻辑层数据时需要用到data属性配合属性 -->
+<include src="./content"></include> 
+<import src="./content2" />
+<template is="content02" data="{{content02:content2}}"></template>
+<!-- 图标 -->
+<icon type="waiting" size="30"></icon>
+  <text style="height: 1000px;" class="userinfo-nickname">hellow world</text>
   <text class="userinfo-nickname">hellow world</text>
   <text class="userinfo-nickname">hellow world</text>
   <text class="userinfo-nickname">hellow world</text>

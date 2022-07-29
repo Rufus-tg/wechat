@@ -6,7 +6,7 @@
   ],
   "window":{
     "backgroundTextStyle":"dark",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#000000",
     "navigationBarTitleText": "慕课",
     "navigationBarTextStyle":"black",
     "enablePullDownRefresh": true
